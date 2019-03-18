@@ -44,6 +44,6 @@ cat ~/.ssh/id_rsa.pub
 * Settings => Members: decrease Jenkins permissions from Maintainer to Developer
 * Settings => Repository => Protected branches: master => Allow to push: change from Maintainers to Maintainers+Developers
 
-## See also:
+### See also:
 
 * https://gist.github.com/cenkalti/5089392 -- my work is based on it.
