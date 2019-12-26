@@ -7,7 +7,7 @@ ls -1d *.xml secrets/ jobs/*/*.xml nodes/*/*.xml userContent/* users/*/config.xm
     plugins/*/META-INF/MANIFEST.MF 2>/dev/null | grep -v '^queue.xml$' | xargs -r -d '\n' git add --
 
 # Track deleted files:
-LANG=C git status | awk '$1 == "deleted:" { print $2; }' | xargs -r git rm --ignore-unmatch
+LANG=C git status --porcelain | awk '$1 == "D" { print $2; }' | xargs -r git rm --ignore-unmatch
 
 LANG=C git status | grep -q '^nothing to commit' || {
     git commit -m "Automated Jenkins commit at $(date '+%Y-%m-%d %H:%M')"
